@@ -1,4 +1,4 @@
-## Project title
+## My Bootstrap clone
 
 This project was about recoding some basic Bootstrap. It made me use a CSS framework (SASS) and some Jquery for the functionnalities.
 
