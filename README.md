@@ -10,10 +10,10 @@ This project is very usefull to consolidate HTML/CSS knowledge and to start mani
 
 Built with :
 
-- [HTML]
-- [CSS]
-- [SASS]
-- [Jquery]
+- HTML
+- CSS
+- SASS
+- Jquery
 
 ## Features
 
