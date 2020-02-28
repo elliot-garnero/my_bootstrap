@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <title>Framework CSS</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="container row">
+        <div class="col-6"><p>6</p></div>
+        <div class="col-6"><p>6</p></div>
+      </header>
+      <div class="navbar-fixed">
+        <ul>
+          <li>un</li>
+          <li>deux</li>
+          <li class="dropdown-menu">
+            Dropdown
+            <ul>
+              <li>yes</li>
+              <li>it</li>
+              <li>works</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="container row">
+        <div class="col-1">
+          <p>col-1</p>
+        </div>
+        <div class="col-2">
+          <p>col-2</p>
+        </div>
+        <div class="col-3">
+          <p>col-3</p>
+        </div>
+        <div class="col-6">
+          <p>col-6</p>
+        </div>
+      </div>
+      <br />
+      <div class="tab-content">
+        <ul class="tab-list">
+          <li class="tab-data-target active">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">My</a>
+          </li>
+          <li class="tab-data-target">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">tab</a>
+          </li>
+          <li class="tab-data-target">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">list</a>
+          </li>
+        </ul>
+      </div>
+      <div id="My" class="tab-pane" style="display: block;">
+        <h2>My</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          saepe illo rem enim doloribus repellendus officiis nemo in beatae
+          voluptates. Fugiat fugit nulla eveniet tempore nostrum natus
+          reprehenderit reiciendis dolor.
+        </p>
+      </div>
+      <div id="tab" class="tab-pane">
+        <h2>tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          saepe illo rem enim doloribus repellendus officiis nemo in beatae
+          voluptates. Fugiat fugit nulla eveniet tempore nostrum natus
+          reprehenderit reiciendis dolor.
+        </p>
+      </div>
+      <div id="list" class="tab-pane">
+        <h2>list</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          saepe illo rem enim doloribus repellendus officiis nemo in beatae
+          voluptates. Fugiat fugit nulla eveniet tempore nostrum natus
+          reprehenderit reiciendis dolor.
+        </p>
+      </div>
+      <main>
+        <div>
+          <p class="btn">First button</p>
+          <p class="btn btn-blue btn-lg">Second button</p>
+          <p class="btn btn-red">Third button</p>
+        </div>
+        <p class="text-primary bg-error">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sequi
+          quasi asperiores quo impedit sint! Mollitia, quo, ut dolore
+          consequatur quaerat quae nostrum nisi natus corporis enim nam maxime
+          eveniet!
+        </p>
+        <div class="alert alert-warning hidden">
+          <p>WARNING WRONG NUMBER</p>
+        </div>
+        <img
+          class="img-responsive"
+          src="https://images.unsplash.com/photo-1498036882173-b41c28a8ba34"
+          alt="plant"
+        />
+      </main>
+      <div class="modal">
+        <h3>This is the modal title</h3>
+        <p class="modal-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In magni,
+          dolore consequatur delectus consectetur amet illum nihil fuga ad
+          eveniet ullam culpa porro perferendis alias, quis cumque ab officiis
+          dolorum.
+        </p>
+        <button class="close-btn">Close</button>
+      </div>
+      <button class="btn btn-green" id="data-target">
+        Launch modal
+      </button>
+      <footer>
+        <div class="tooltip">
+          <p class="btn btn-blue">
+            You can hover on me and i'll show my tooltip
+          </p>
+          <p class="tooltip-content-bottom">
+            Here it is, Infos can be displayed here
+          </p>
+        </div>
+        <div>
+          <p class="visible-screen hidden-mobile">visible in big screen only</p>
+          <p class="hidden-screen visible-mobile">visible in mobile only</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

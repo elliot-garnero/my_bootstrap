@@ -1,0 +1,384 @@
+//Functions
+
+@mixin center() {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+@mixin btn-color($color) {
+  background: $color;
+  border: 1px solid $color;
+}
+
+// Here we do the grid
+
+.container {
+  @include center();
+  background-color: hotpink;
+  width: 60%;
+  justify-content: space-around;
+}
+
+.container-fluid {
+  @include center();
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 100% / 12 * $i;
+  }
+}
+
+// We then take care of the elements
+
+.btn {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+  &:active {
+    box-shadow: 0 4px darkslategrey;
+  }
+  &-disabled {
+    cursor: auto;
+    &:active {
+      box-shadow: none;
+    }
+  }
+  &-sm {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  &-lg {
+    font-size: 20px;
+    padding: 12px 24px;
+  }
+  &-red {
+    @include btn-color(#d9534f);
+  }
+  &-blue {
+    @include btn-color(#0275d8);
+  }
+  &-green {
+    @include btn-color(#5cb85c);
+  }
+  &-yellow {
+    @include btn-color(#f0ad4e);
+  }
+}
+
+.img {
+  &-responsive {
+    width: 100%;
+    height: auto;
+  }
+  &-rounded {
+    border-radius: 15%;
+  }
+  &-circle {
+    border-radius: 50%;
+  }
+  &-thumbnail {
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+  }
+  &-blur {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+}
+
+.text {
+  &-muted {
+    color: lightgrey;
+  }
+  &-primary {
+    color: #0275d8;
+  }
+  &-success {
+    color: #5cb85c;
+  }
+  &-info {
+    color: #0d98ba;
+  }
+  &-warning {
+    color: #f0ad4e;
+  }
+  &-error {
+    color: #d9534f;
+  }
+}
+
+.bg {
+  &-muted {
+    background-color: lightgrey;
+  }
+  &-primary {
+    background-color: #0275d8;
+  }
+  &-success {
+    background-color: #5cb85c;
+  }
+  &-info {
+    background-color: #0d98ba;
+  }
+  &-warning {
+    background-color: #f0ad4e;
+  }
+  &-error {
+    background-color: #d9534f;
+  }
+}
+
+.alert {
+  color: white;
+  padding: 8px;
+  border: 2px solid black;
+  text-align: center;
+  &-success {
+    background-color: #5cb85c;
+  }
+  &-info {
+    background-color: #0d98ba;
+  }
+  &-warning {
+    background-color: #f0ad4e;
+  }
+  &-danger {
+    background-color: #d9534f;
+  }
+}
+
+//  Visibility for big screens
+
+.hidden-screen {
+  display: none;
+}
+
+.visible-screen {
+  display: block;
+}
+
+.hidden-mobile {
+  display: block;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+//  There we do the navbar
+
+.navbar {
+  position: absolute;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0d98ba;
+    padding: 1px;
+  }
+  li {
+    float: left;
+    border: 1px solid white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    padding: 15px;
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: grey;
+  }
+}
+
+.navbar-fixed {
+  @extend .navbar;
+  position: fixed;
+}
+
+.dropdown-menu {
+  &:hover {
+    li {
+      display: block;
+    }
+  }
+  li {
+    display: none;
+  }
+}
+
+//  We create a modal box for user to diplay onclick
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 20%;
+  width: 50%;
+  height: 50%;
+  background-color: grey;
+  border: 2px solid #0d98ba;
+  border-radius: 15px;
+  text-align: center;
+  p {
+    padding-top: 5%;
+  }
+  &-content {
+    position: relative;
+    bottom: -20%;
+  }
+  .close-btn {
+    @extend .btn, .btn-red;
+    position: relative;
+    bottom: -50%;
+  }
+}
+
+//   Let's take care of the tabs
+
+.tab-content {
+  overflow: hidden;
+  border: 1px solid darkgrey;
+  background-color: #f1f1f1;
+  border-bottom: none;
+}
+
+.tab-list {
+  margin: 0;
+  list-style-type: none;
+}
+
+.tab-data-target {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  &:hover {
+    background: grey;
+  }
+  a {
+    text-decoration: none;
+    color: #0d98ba;
+  }
+}
+
+.tab-pane {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid darkgrey;
+  border-top: none;
+  background: lightgrey;
+}
+
+.active {
+  background-color: lightgrey;
+  border: solid 1px darkgrey;
+  border-bottom: none;
+}
+
+//  Last step, the tooltips
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  .tooltip-content {
+    color: white;
+    visibility: hidden;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+  }
+  &:hover .tooltip-content {
+    visibility: visible;
+  }
+}
+
+.tooltip-content {
+  &-top {
+    @extend .tooltip-content;
+    top: -40px;
+  }
+  &-right {
+    @extend .tooltip-content;
+    top: 0;
+    left: 100%;
+  }
+  &-bottom {
+    @extend .tooltip-content;
+    top: 30px;
+  }
+  &-left {
+    @extend .tooltip-content;
+    top: 0;
+    left: -100%;
+  }
+}
+
+//  Below are media querries for smaller devices and printing
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+
+  .hidden-screen {
+    display: block;
+  }
+
+  .visible-screen {
+    display: none;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .visible-mobile {
+    display: block;
+  }
+
+  .modal {
+    left: 10%;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media print {
+  .hidden-print {
+    display: none;
+  }
+}
